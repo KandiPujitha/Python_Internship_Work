@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title{% load static %}
+>Registration Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static  'css/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+	<table class="table table-bordered  table-hover">
+		<thead class="bg-dark text-center text-light>"  
+		<thead>
+			<th>Name</th>
+			<th>email id</th>
+			<th>Actions</th>
+		</thead>
+		<tbody>
+			{% for row in data %}
+			<tr>
+				<td>{{row.name}}</td>
+				<td>{{row.email}}</td>
+				<td><a href="{% url 'sv' row.id %}" class="btn   btn-outline-primary mx=2">
+				View</a><a href="#" class="btn btn-outline-success
+				mx-1">Update</a><a href="#"class="btn
+				btn-outline-danger mx-1">Delete</a></td>  
+				
+
+					
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>				
+	
+</body>
+</html>	
